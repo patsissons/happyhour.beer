@@ -42,6 +42,13 @@ The application uses a simple data structure defined in `src/lib/types.ts`:
 - **Filtering Options**: Users can filter venues by day, price range, and tags, making it easy to find relevant venues.
 - **Detailed Happy Hour Information**: Happy hour details are displayed in a tabular format, making it easy to read and compare.
 
+### SEO and Metadata
+
+- **OpenGraph Metadata**: The application includes OpenGraph metadata for better social media sharing.
+- **Dynamic Metadata**: Each page has appropriate metadata, with the venue detail pages using venue-specific information.
+- **Default Image**: A default OpenGraph image is provided for the home page and as a fallback for venue pages.
+- **Venue-Specific Images**: Venue detail pages use the venue's first image as the OpenGraph image when available.
+
 ## Future Enhancements
 
 - **User Authentication**: Allow users to create accounts and save favorite venues.

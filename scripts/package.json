@@ -1,0 +1,8 @@
+{
+  "name": "happyhour-beer-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^24.7.2"
+  }
+}
