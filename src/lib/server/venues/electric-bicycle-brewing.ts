@@ -1,4 +1,4 @@
-import type { Venue } from "$lib/types";
+import type { Venue } from '$lib/types';
 
 export const electricBicycleBrewing: Venue = {
   slug: 'electric-bicycle-brewery',
@@ -12,40 +12,38 @@ export const electricBicycleBrewing: Venue = {
   googlePlaceId: 'ChIJbyOmGGBxhlQRTcdQyvFbYMY',
   email: 'info@ebbeer.com',
   phone: '+1-604-709-9939',
-  images: [
-    "https://electricbicyclebrewing.com/cdn/shop/files/IMG_2728_2_1512x.jpg?v=1614310986"
-  ],
+  images: ['https://electricbicyclebrewing.com/cdn/shop/files/IMG_2728_2_1512x.jpg?v=1614310986'],
   menus: [
     {
       label: 'On tap',
-      url: 'https://electricbicyclebrewing.com/pages/rotating-beers-on-tap'
+      url: 'https://electricbicyclebrewing.com/pages/rotating-beers-on-tap',
     },
     {
       label: 'Other liquids',
-      url: 'https://electricbicyclebrewing.com/pages/more-liquids-snacks'
+      url: 'https://electricbicyclebrewing.com/pages/more-liquids-snacks',
     },
     {
       label: 'Happy Hour',
-      url: 'https://electricbicyclebrewing.com/pages/happy-hour'
+      url: 'https://electricbicyclebrewing.com/pages/happy-hour',
     },
     {
       label: 'Kapaow! burgers',
-      url: 'https://www.kapowburger.com/menu'
-    }
+      url: 'https://www.kapowburger.com/menu',
+    },
   ],
   socials: [
     {
       type: 'facebook',
-      url: 'https://www.facebook.com/Electricbicyclebrewing'
+      url: 'https://www.facebook.com/Electricbicyclebrewing',
     },
     {
       type: 'instagram',
-      url: 'https://www.instagram.com/electricbicyclebrewing'
+      url: 'https://www.instagram.com/electricbicyclebrewing',
     },
     {
       type: 'twitter',
-      url: 'https://twitter.com/ebbvancouver'
-    }
+      url: 'https://twitter.com/ebbvancouver',
+    },
   ],
   happyHours: [
     {
@@ -55,18 +53,18 @@ export const electricBicycleBrewing: Venue = {
       drinks: [
         {
           label: 'All 13oz draft beers',
-          price: 5
-        }
-      ]
+          price: 5,
+        },
+      ],
     },
     {
       days: ['sunday'],
       drinks: [
         {
           label: '16oz Pilsners all day',
-          price: 5
-        }
-      ]
-    }
-  ]
-}
+          price: 5,
+        },
+      ],
+    },
+  ],
+};

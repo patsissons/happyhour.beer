@@ -1,6 +1,3 @@
-import type { Venue } from "$lib/types";
-import { electricBicycleBrewing } from "./electric-bicycle-brewing";
+import { venues } from './venues';
 
-export const venues: Venue[] = [
-  electricBicycleBrewing
-]
+export const venueList = Object.values(venues);

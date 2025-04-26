@@ -1,4 +1,11 @@
-export type Day = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday';
+export type Day =
+  | 'monday'
+  | 'tuesday'
+  | 'wednesday'
+  | 'thursday'
+  | 'friday'
+  | 'saturday'
+  | 'sunday';
 
 export interface HappyHourItem {
   label: string;
@@ -19,12 +26,12 @@ export interface HappyHour {
 export interface Menu {
   label: string;
   url: string;
-  image?: string
+  image?: string;
 }
 
 export interface Social {
   type: 'facebook' | 'instagram' | 'twitter';
-  url: string
+  url: string;
 }
 
 export interface Venue {

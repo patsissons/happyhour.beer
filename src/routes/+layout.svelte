@@ -1,7 +1,9 @@
 <script lang="ts">
-	import '../app.css';
+  import '../app.css';
 
-	let { children } = $props();
+  let { children } = $props();
 </script>
 
-{@render children()}
+<div data-theme="light" class="min-h-dvh max-w-dvw overflow-x-clip">
+  {@render children()}
+</div>
