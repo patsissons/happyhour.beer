@@ -10,6 +10,7 @@ export type Day =
 export interface HappyHourItem {
   label: string;
   price: number;
+  type: string;
   notes?: string;
 }
 

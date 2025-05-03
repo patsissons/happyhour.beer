@@ -12,7 +12,11 @@ export const electricBicycleBrewing: Venue = {
   googlePlaceId: 'ChIJbyOmGGBxhlQRTcdQyvFbYMY',
   email: 'info@ebbeer.com',
   phone: '+1-604-709-9939',
-  images: ['https://electricbicyclebrewing.com/cdn/shop/files/IMG_2728_2_1512x.jpg?v=1614310986'],
+  images: [
+    'https://electricbicyclebrewing.com/cdn/shop/files/IMG_2728_2_1512x.jpg?v=1614310986',
+    'https://electricbicyclebrewing.com/cdn/shop/files/IMG_1900_300x300.jpg?v=1614310987',
+    'https://electricbicyclebrewing.com/cdn/shop/files/IMG_2880_300x300.jpg?v=1614310986',
+  ],
   menus: [
     {
       label: 'On tap',
@@ -54,6 +58,7 @@ export const electricBicycleBrewing: Venue = {
         {
           label: 'All 13oz draft beers',
           price: 5,
+          type: 'beer',
         },
       ],
     },
@@ -63,6 +68,7 @@ export const electricBicycleBrewing: Venue = {
         {
           label: '16oz Pilsners all day',
           price: 5,
+          type: 'beer',
         },
       ],
     },

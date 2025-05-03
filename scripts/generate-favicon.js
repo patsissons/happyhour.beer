@@ -13,7 +13,7 @@ async function generateFavicon() {
   await page.setViewport({
     width: 32,
     height: 32,
-    deviceScaleFactor: 2, // For retina quality
+    deviceScaleFactor: 4, // For retina quality
   });
 
   // Load the HTML file

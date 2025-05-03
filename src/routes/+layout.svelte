@@ -36,6 +36,6 @@
   <meta property="twitter:image" content={image} />
 </svelte:head>
 
-<div data-theme="light" class="min-h-dvh max-w-dvw overflow-x-clip">
+<div data-theme="light" class="h-full">
   {@render children()}
 </div>

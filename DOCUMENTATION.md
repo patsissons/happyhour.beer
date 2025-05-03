@@ -32,7 +32,7 @@ The application uses a simple data structure defined in `src/lib/types.ts`:
 2. **Venue Detail Page (`/venue/[slug]`)**:
    - Shows detailed information about a specific venue
    - Displays happy hour details in a tabular format
-   - Provides links to maps, directions, website, etc.
+   - Provides links to maps, website, etc.
 
 ### UI/UX Decisions
 
