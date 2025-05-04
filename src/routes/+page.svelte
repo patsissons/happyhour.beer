@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { days, priceRanges } from '$lib/constants';
+  import { days, priceRanges, typeEmojis } from '$lib/constants';
   import type { Day, Venue } from '$lib/types';
   import type { LayoutProps } from './$types';
 
@@ -11,20 +11,6 @@
   let selectedTags = $state<string[]>([]);
   let selectedDay = $state<Day | null>(null);
   let selectedPriceRange = $state<string | null>(null);
-
-  const drinkTypeEmojis: Record<string, string> = {
-    beer: '🍺',
-    wine: '🍷',
-    cocktail: '🍸',
-    champers: '🍾',
-  };
-
-  const foodTypeEmojis: Record<string, string> = {
-    burger: '🍔',
-    pizza: '🍕',
-    sushi: '🍣',
-    wings: '🍗',
-  };
 
   // Filter venues based on search criteria
   let filteredVenues = $derived(
@@ -206,9 +192,10 @@
                 <a class="link-hover" href={`/venue/${venue.slug}`}>
                   <h2 class="card-title">{venue.name}</h2>
                 </a>
-                <p class="text-sm">{venue.address}, {venue.city}, {venue.region}</p>
 
-                <div class="mt-2">
+                <span class="text-sm">{venue.address}, {venue.city}, {venue.region}</span>
+
+                <div class="mt-2 flex-1">
                   <h3 class="font-semibold">Happy Hours:</h3>
                   {#each venue.happyHours as hh (JSON.stringify(hh))}
                     <div class="bg-base-300 my-1 h-px w-full first-of-type:hidden"></div>
@@ -234,7 +221,9 @@
                             {#each hh.drinks as drink (drink.label)}
                               <li class="flex items-center justify-between gap-1">
                                 <span>${drink.price} {drink.label}</span>
-                                <span>{drinkTypeEmojis[drink.type] || '🥃'}</span>
+                                <span
+                                  >{typeEmojis.drink[drink.type] || typeEmojis.drink.default}</span
+                                >
                               </li>
                             {/each}
                           </ul>
@@ -247,7 +236,7 @@
                             {#each hh.food as food (food.label)}
                               <li class="flex items-center justify-between gap-1">
                                 <span>${food.price} {food.label}</span>
-                                <span>{foodTypeEmojis[food.type] || '🍴'}</span>
+                                <span>{typeEmojis.food[food.type] || typeEmojis.food.default}</span>
                               </li>
                             {/each}
                           </ul>

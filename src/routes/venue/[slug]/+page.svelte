@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { typeEmojis } from '$lib/constants';
   import type { Venue } from '$lib/types';
   import type { LayoutProps } from './$types';
 
@@ -34,7 +35,7 @@
 
   // Format day names
   function formatDay(day: string): string {
-    return day.charAt(0).toUpperCase() + day.slice(1);
+    return day.charAt(0).toUpperCase() + day.slice(1, 3);
   }
 </script>
 
@@ -100,6 +101,18 @@
 
           {#if venue.description}
             <p class="mb-4">{venue.description}</p>
+          {/if}
+
+          {#if venue.notes}
+            <p class="text-base-content/70 mb-4 text-xs">{venue.notes}</p>
+          {/if}
+
+          {#if venue.tags && venue.tags.length > 0}
+            <div class="mb-4 flex gap-1">
+              {#each venue.tags || [] as tag (tag)}
+                <span class="badge badge-secondary h-auto px-1 text-xs">{tag}</span>
+              {/each}
+            </div>
           {/if}
 
           <!-- Contact Links -->
@@ -255,13 +268,17 @@
             <div class="card bg-base-100 shadow-md">
               <div class="card-body">
                 <h3 class="card-title">
-                  {#each hh.days as day, i (day)}
-                    {formatDay(day)}{i < hh.days.length - 1 ? ',' : ''}
-                  {/each}
+                  {hh.days.map(formatDay).join(', ')}
                 </h3>
 
-                {#if hh.start && hh.end}
-                  <p class="text-lg font-medium">{formatTime(hh.start)} - {formatTime(hh.end)}</p>
+                {#if hh.start || hh.end}
+                  <p class="text-base-content/70 text-sm font-medium">
+                    {hh.start ? formatTime(hh.start) : 'Open'} - {hh.end
+                      ? formatTime(hh.end)
+                      : 'Close'}
+                  </p>
+                {:else}
+                  <p class="text-lg font-medium">All day</p>
                 {/if}
 
                 {#if hh.notes}
@@ -272,9 +289,10 @@
                   <div class="mt-4">
                     <h4 class="text-lg font-semibold">Drinks</h4>
                     <div class="overflow-x-auto">
-                      <table class="table-zebra table w-full">
+                      <table class="table-zebra table-xs table w-full">
                         <thead>
                           <tr>
+                            <th>Type</th>
                             <th>Item</th>
                             <th>Price</th>
                             {#if hh.drinks.some((d) => d.notes)}
@@ -285,6 +303,9 @@
                         <tbody>
                           {#each hh.drinks as drink (drink.label)}
                             <tr>
+                              <td class="text-center"
+                                >{typeEmojis.drink[drink.type] || typeEmojis.drink.default}</td
+                              >
                               <td>{drink.label}</td>
                               <td>${drink.price}</td>
                               {#if hh.drinks.some((d) => d.notes)}
@@ -305,6 +326,7 @@
                       <table class="table-zebra table w-full">
                         <thead>
                           <tr>
+                            <th>Type</th>
                             <th>Item</th>
                             <th>Price</th>
                             {#if hh.food.some((f) => f.notes)}
@@ -315,6 +337,9 @@
                         <tbody>
                           {#each hh.food as food (food.label)}
                             <tr>
+                              <td class="text-center"
+                                >{typeEmojis.food[food.type] || typeEmojis.food.default}</td
+                              >
                               <td>{food.label}</td>
                               <td>${food.price}</td>
                               {#if hh.food.some((f) => f.notes)}

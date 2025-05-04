@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 @plugin 'daisyui' {
-  themes:
-    silk --default,
-    dim;
+  themes: silk --default;
 }
 
 html,

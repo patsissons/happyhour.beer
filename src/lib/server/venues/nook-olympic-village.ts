@@ -7,7 +7,6 @@ export const nookOlympicVillage: Venue = {
   city: 'Vancouver',
   region: 'British Columbia',
   country: 'Canada',
-
   description: `Casual, modern Italian locale with a bar & serving up pizza, housemade pasta & drinks.`,
   website: 'https://nookrestaurants.com/olympic-village/',
   googlePlaceId: 'ChIJfQrl6U5zhlQRA3S2ozY4fMI ',

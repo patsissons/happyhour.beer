@@ -53,4 +53,5 @@ export interface Venue {
   socials?: Social[];
   happyHours: HappyHour[];
   tags?: string[];
+  notes?: string;
 }

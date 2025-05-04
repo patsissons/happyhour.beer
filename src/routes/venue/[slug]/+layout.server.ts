@@ -1,3 +1,4 @@
+import { hydrateVenue } from '$lib/server/data';
 import { venues } from '$lib/server/venues';
 import type { LayoutServerLoad } from './$types';
 
@@ -6,7 +7,7 @@ export const load: LayoutServerLoad = async ({ params }) => {
   const allTags = venue?.happyHours.flatMap((happyHour) => happyHour.tags || []);
 
   return {
-    venue,
+    venue: hydrateVenue(venue),
     allTags,
   };
 };
